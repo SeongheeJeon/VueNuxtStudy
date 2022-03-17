@@ -13,13 +13,17 @@
       <button @click="addTask">Add</button>
     </div>
 
-    <div class="tasks">
-      <Task v-for="(task, i) in $store.state.tasks" :key="i" :task="task" />
-    </div>
+    <draggable class="tasks">
+      <transition-group>
+        <Task v-for="(task, i) in $store.state.tasks" :key="i" :task="task" />
+      </transition-group>
+    </draggable>
   </main>
 </template>
 
 <script>
+import draggable from 'vuedraggable'
+
 export default {
   data() {
     return {
@@ -33,6 +37,9 @@ export default {
         this.newTask = ''
       }
     },
+  },
+  components: {
+    draggable,
   },
 }
 </script>
