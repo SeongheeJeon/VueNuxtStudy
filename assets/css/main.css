@@ -69,6 +69,11 @@ main .create-new button {
   cursor: pointer;
 }
 
+main .count p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
 main .tasks {
   width: 100%;
   max-width: 480px;

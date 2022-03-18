@@ -13,6 +13,14 @@
       <button @click="addTask">Add</button>
     </div>
 
+    <div class="count">
+      <p>
+        {{
+          'complete : ' + $store.state.completed + ' / ' + $store.state.total
+        }}
+      </p>
+    </div>
+
     <draggable class="tasks">
       <transition-group>
         <Task v-for="(task, i) in $store.state.tasks" :key="i" :task="task" />
