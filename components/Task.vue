@@ -6,7 +6,7 @@
     @dragstart="startDrag"
     @dragend="stopDrag"
   >
-    <div class="content">{{ task.content }}</div>
+    <input type="text" class="content" v-model="content" />
     <div class="buttons">
       <button @click="toggleDone">{{ task.done ? 'Undo' : 'Done' }}</button>
       <button @click="removeTask" class="delete">Delete</button>
@@ -17,6 +17,11 @@
 <script>
 export default {
   props: ['task'],
+  data() {
+    return {
+      content: this.task.content,
+    }
+  },
   methods: {
     toggleDone() {
       this.$store.commit('TOGGLE_TASK', this.task)

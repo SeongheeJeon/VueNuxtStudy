@@ -115,11 +115,18 @@ main .tasks .task button.delete {
 }
 
 .tasks .task.is-complete {
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 .tasks .task.dragging {
   border: crimson solid 2px;
+}
+
+.tasks input.content {
+  border: none;
+  background-color: rgb(52, 47, 78);
+  color: #fff;
+  font-size: 1rem;
 }
 
 .tasks .task.is-complete .content {
