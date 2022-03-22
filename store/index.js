@@ -7,8 +7,8 @@ export const state = () => ({
 export const mutations = {
   ADD_TASK(state, task) {
     state.tasks = [
-      { content: task, done: false, dragging: false },
       ...state.tasks,
+      { content: task, done: false, dragging: false },
     ]
     state.total += 1
   },
